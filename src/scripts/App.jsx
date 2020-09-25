@@ -47,6 +47,7 @@ class App extends React.Component {
 		video.setAttribute('controls', 'controls')
 		video.setAttribute('height',480)
 		video.setAttribute('width',640)
+		video.setAttribute('preload','none')
 		video.src = window.URL.createObjectURL(superBuffer)
 		console.log(video)
 		video.play()

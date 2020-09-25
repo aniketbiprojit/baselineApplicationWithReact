@@ -41,7 +41,7 @@ class App extends React.Component {
 
 	displayVideo() {
 		let recordedBlobs = window.recordedBlobs
-		// this.setState({ recordedBlobs })
+		this.setState({ recordedBlobs })
 		const superBuffer = new Blob(recordedBlobs, { type: 'video/webm' })
 		let video = document.createElement('video')
 		video.setAttribute('controls', 'controls')

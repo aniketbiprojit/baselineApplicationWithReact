@@ -1,12 +1,36 @@
 .App {
+}
+.outer-button {
+	bottom: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	flex-direction: column;
+	.button-record {
+		padding: 40px;
+		background-color: red;
+		border-radius: 40px;
+	}
+}
 
-}
-.button-record {
-  left: 200px !important;
-  padding: 10px 20px;
+.parent-div{
+	.add-video{
+		all:initial;
+		width:100%;
+		// object-fit: contain;
+		// object-position: center;		
+	}
 }
 
-video {
-  height: 200px !important;
-  width: auto;
+.time-record {
+	// position: absolute;
+	z-index: 2;
+	// display: none;
+	top: 30px;
+	font-size: 40px;
+	color: white;
 }
+

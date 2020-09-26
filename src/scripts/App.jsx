@@ -5,13 +5,15 @@ import '../styles/App.scss'
 class App extends React.Component {
 	constructor() {
 		super()
-		this.state = { camera: false, recordedBlobs: [] }
+		this.state = { camera: true, recordedBlobs: [] }
 		this.toggle = this.toggle.bind(this)
 		this.fireCheck = this.fireCheck.bind(this)
 	}
 	componentDidMount() {
-		document.getElementById('application').style.display = 'none'
-		this.setState({ camera: false })
+		document.getElementById('root').style.display = 'none'
+		this.setState({ camera: true })
+		let processed = document.getElementById('processed')
+		processed.addEventListener('change', this.toggle)
 	}
 
 	fireCheck() {
@@ -49,6 +51,9 @@ class App extends React.Component {
 		video.setAttribute('width', 640)
 		video.setAttribute('preload', 'none')
 		video.setAttribute('loop', 'loop')
+
+		video.classList.add('add-video')
+
 		video.src = window.URL.createObjectURL(superBuffer)
 		console.log(video)
 		video.play()
@@ -61,7 +66,8 @@ class App extends React.Component {
 				<div className='App'>
 					<button onClick={this.toggle}>Open Camera Tray.</button>
 				</div>
-				<div className='videos' id='videos'></div>
+				<div className='parent-div' id='videos'></div>
+				<button>Publish</button>
 			</React.Fragment>
 		)
 	}

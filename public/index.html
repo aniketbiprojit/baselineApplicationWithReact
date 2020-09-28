@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -84,5 +83,22 @@
 	<script src="./adapter.js" type="text/javascript"></script>
 	<script src="./bundle.js" type="text/javascript"></script>
 </body>
+<!-- <script src="https://browser.sentry-cdn.com/5.24.2/bundle.tracing.min.js"
+	integrity="sha384-Epltozh7S1cJM2hcIRDJBbqiiVpZsNlFCciHxKIAfKN8mSTa+gMivtz7glp/30Mz"
+	crossorigin="anonymous"></script>
+<script type="module">
+	// import * as Sentry from "@sentry/browser";					
+	// import { Integrations } from "@sentry/tracing";					
+	// let Intergrations = Sentry.Intergrations					
+
+	let s = Sentry.init({
+		dsn: 'https://b3141fc3c4ef43ff949ee5fa2da1795c@o453265.ingest.sentry.io/5441934',
+		integrations: [
+			new Sentry.Integrations.BrowserTracing(),
+		],
+		tracesSampleRate: 1.0,
+	});
+	console.log(s)
+</script> -->
 
 </html>

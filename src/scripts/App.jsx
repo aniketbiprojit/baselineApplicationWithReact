@@ -51,13 +51,24 @@ class App extends React.Component {
 		video.setAttribute('width', 640)
 		video.setAttribute('preload', 'none')
 		video.setAttribute('loop', 'loop')
-
 		video.classList.add('add-video')
 
 		video.src = window.URL.createObjectURL(superBuffer)
 		console.log(video)
 		video.play()
+		// video.style.display = 'none'
 		document.getElementById('videos').appendChild(video)
+
+		// const canvas = document.querySelector('canvas')
+		// const ctx = canvas.getContext('2d')
+		// video.addEventListener('play', () => {
+		// 	function step() {
+		// 		ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
+		// 		requestAnimationFrame(step)
+		// 	}
+		// 	requestAnimationFrame(step)
+		// })
+		// window.ctx=ctx
 	}
 
 	render() {
@@ -67,6 +78,7 @@ class App extends React.Component {
 					<button onClick={this.toggle}>Open Camera Tray.</button>
 				</div>
 				<div className='parent-div' id='videos'></div>
+				<canvas height='300'></canvas>
 				<button>Publish</button>
 			</React.Fragment>
 		)

@@ -5,7 +5,7 @@ import '../styles/App.scss'
 class App extends React.Component {
 	constructor() {
 		super()
-		this.state = { camera: true, recordedBlobs: [] }
+		this.state = { camera: true, recordedBlobs: [], gray_percent: 0 }
 		this.toggle = this.toggle.bind(this)
 		this.fireCheck = this.fireCheck.bind(this)
 	}
@@ -45,7 +45,8 @@ class App extends React.Component {
 		let recordedBlobs = window.recordedBlobs
 		this.setState({ recordedBlobs })
 		const superBuffer = new Blob(recordedBlobs, { type: 'video/webm' })
-		let video = document.createElement('video')
+
+		let video = document.getElementById('add-video')
 		video.setAttribute('controls', 'controls')
 		video.setAttribute('height', 480)
 		video.setAttribute('width', 640)
@@ -56,19 +57,21 @@ class App extends React.Component {
 		video.src = window.URL.createObjectURL(superBuffer)
 		console.log(video)
 		video.play()
-		// video.style.display = 'none'
-		document.getElementById('videos').appendChild(video)
 
-		// const canvas = document.querySelector('canvas')
+		// const canvas = document.getElementById('canvas_video')
 		// const ctx = canvas.getContext('2d')
-		// video.addEventListener('play', () => {
+
+		// let flag = true
+		// video.addEventListener('playing', () => {
 		// 	function step() {
+		// 		console.log('step')
 		// 		ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
 		// 		requestAnimationFrame(step)
 		// 	}
-		// 	requestAnimationFrame(step)
+		// 	if (flag) requestAnimationFrame(step)
+		// 	flag=false
 		// })
-		// window.ctx=ctx
+		// window.ctx = ctx
 	}
 
 	render() {
@@ -77,8 +80,42 @@ class App extends React.Component {
 				<div className='App'>
 					<button onClick={this.toggle}>Open Camera Tray.</button>
 				</div>
-				<div className='parent-div' id='videos'></div>
-				<canvas height='300'></canvas>
+				<div className='parent-div' id='videos'>
+					<video
+						style={{
+							filter: `grayscale(${this.state.gray_percent}%)`,
+						}}
+						id='add-video'
+						className='add-video'
+					></video>
+				</div>
+				<button
+					id='increase_gray'
+					onClick={() => {
+						let gray_percent = this.state.gray_percent + 5
+						this.setState({ gray_percent })
+					}}
+				>
+					increase_gray
+				</button>
+				<button
+					id='decrease_gray'
+					onClick={() => {
+						let gray_percent = this.state.gray_percent - 5
+						this.setState({ gray_percent })
+					}}
+				>
+					decrease_gray
+				</button>
+				{this.state.gray_percent}
+				{/* <canvas
+					id='canvas_video'
+					style={{
+						position: 'initial',
+						height: '720',
+						width: '1280',
+					}}
+				></canvas> */}
 				<button>Publish</button>
 			</React.Fragment>
 		)

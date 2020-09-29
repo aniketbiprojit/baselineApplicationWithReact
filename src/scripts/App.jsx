@@ -5,7 +5,14 @@ import '../styles/App.scss'
 class App extends React.Component {
 	constructor() {
 		super()
-		this.state = { camera: true, recordedBlobs: [], gray_percent: 0, contrast_percent:100 }
+		this.state = {
+			camera: true,
+			recordedBlobs: [],
+			gray_percent: 0,
+			contrast_percent: 100,
+			hue_rotate: 0,
+			saturate_percent: 100,
+		}
 		this.toggle = this.toggle.bind(this)
 		this.fireCheck = this.fireCheck.bind(this)
 	}
@@ -83,7 +90,7 @@ class App extends React.Component {
 				<div className='parent-div' id='videos'>
 					<video
 						style={{
-							filter: `grayscale(${this.state.gray_percent}%) contrast(${this.state.contrast_percent}%)`,
+							filter: `grayscale(${this.state.gray_percent}%) contrast(${this.state.contrast_percent}%) saturate(${this.state.saturate_percent}%) hue-rotate(${this.state.hue_rotate}deg)`,
 						}}
 						id='add-video'
 						className='add-video'
@@ -108,7 +115,7 @@ class App extends React.Component {
 					decrease_gray
 				</button>
 				{this.state.gray_percent}
-				<br/>
+				<br />
 
 				<button
 					id='increase_contrast'
@@ -129,7 +136,45 @@ class App extends React.Component {
 					decrease_contrast
 				</button>
 				{this.state.contrast_percent}
-				<br/>
+				<br />
+
+				<button
+					onClick={() => {
+						let hue_rotate = this.state.hue_rotate + 5
+						this.setState({ hue_rotate })
+					}}
+				>
+					increase_hue
+				</button>
+				<button
+					onClick={() => {
+						let hue_rotate = this.state.hue_rotate - 5
+						this.setState({ hue_rotate })
+					}}
+				>
+					decrease_hue
+				</button>
+				{this.state.hue_rotate}
+				<br />
+
+				<button
+					onClick={() => {
+						let saturate_percent = this.state.saturate_percent + 5
+						this.setState({ saturate_percent })
+					}}
+				>
+					increase_saturate
+				</button>
+				<button
+					onClick={() => {
+						let saturate_percent = this.state.saturate_percent - 5
+						this.setState({ saturate_percent })
+					}}
+				>
+					decrease_saturate
+				</button>
+				{this.state.saturate_percent}
+				<br />
 				<button>Publish</button>
 			</React.Fragment>
 		)

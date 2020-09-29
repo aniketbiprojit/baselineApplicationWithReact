@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/baselineApplicationWithReact$/static/css/main.f047d76d.chunk.css",
-    "main.js": "/baselineApplicationWithReact$/static/js/main.e8319342.chunk.js",
-    "main.js.map": "/baselineApplicationWithReact$/static/js/main.e8319342.chunk.js.map",
-    "runtime-main.js": "/baselineApplicationWithReact$/static/js/runtime-main.8b30b1c1.js",
-    "runtime-main.js.map": "/baselineApplicationWithReact$/static/js/runtime-main.8b30b1c1.js.map",
-    "static/js/2.44f2bcbb.chunk.js": "/baselineApplicationWithReact$/static/js/2.44f2bcbb.chunk.js",
-    "static/js/2.44f2bcbb.chunk.js.map": "/baselineApplicationWithReact$/static/js/2.44f2bcbb.chunk.js.map",
-    "index.html": "/baselineApplicationWithReact$/index.html",
-    "precache-manifest.4bdd3f7f5a4cf7a636ebb38293f50412.js": "/baselineApplicationWithReact$/precache-manifest.4bdd3f7f5a4cf7a636ebb38293f50412.js",
-    "service-worker.js": "/baselineApplicationWithReact$/service-worker.js",
-    "static/css/main.f047d76d.chunk.css.map": "/baselineApplicationWithReact$/static/css/main.f047d76d.chunk.css.map",
-    "static/js/2.44f2bcbb.chunk.js.LICENSE.txt": "/baselineApplicationWithReact$/static/js/2.44f2bcbb.chunk.js.LICENSE.txt"
+    "main.css": "/baselineApplicationWithReact/static/css/main.f047d76d.chunk.css",
+    "main.js": "/baselineApplicationWithReact/static/js/main.db7d6b5d.chunk.js",
+    "main.js.map": "/baselineApplicationWithReact/static/js/main.db7d6b5d.chunk.js.map",
+    "runtime-main.js": "/baselineApplicationWithReact/static/js/runtime-main.e2abc163.js",
+    "runtime-main.js.map": "/baselineApplicationWithReact/static/js/runtime-main.e2abc163.js.map",
+    "static/js/2.44f2bcbb.chunk.js": "/baselineApplicationWithReact/static/js/2.44f2bcbb.chunk.js",
+    "static/js/2.44f2bcbb.chunk.js.map": "/baselineApplicationWithReact/static/js/2.44f2bcbb.chunk.js.map",
+    "index.html": "/baselineApplicationWithReact/index.html",
+    "precache-manifest.aeec859c565e07028d048210bebb3266.js": "/baselineApplicationWithReact/precache-manifest.aeec859c565e07028d048210bebb3266.js",
+    "service-worker.js": "/baselineApplicationWithReact/service-worker.js",
+    "static/css/main.f047d76d.chunk.css.map": "/baselineApplicationWithReact/static/css/main.f047d76d.chunk.css.map",
+    "static/js/2.44f2bcbb.chunk.js.LICENSE.txt": "/baselineApplicationWithReact/static/js/2.44f2bcbb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8b30b1c1.js",
+    "static/js/runtime-main.e2abc163.js",
     "static/js/2.44f2bcbb.chunk.js",
     "static/css/main.f047d76d.chunk.css",
-    "static/js/main.e8319342.chunk.js"
+    "static/js/main.db7d6b5d.chunk.js"
   ]
 }

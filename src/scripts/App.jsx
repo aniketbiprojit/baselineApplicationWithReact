@@ -5,7 +5,7 @@ import '../styles/App.scss'
 class App extends React.Component {
 	constructor() {
 		super()
-		this.state = { camera: true, recordedBlobs: [], gray_percent: 0 }
+		this.state = { camera: true, recordedBlobs: [], gray_percent: 0, contrast_percent:100 }
 		this.toggle = this.toggle.bind(this)
 		this.fireCheck = this.fireCheck.bind(this)
 	}
@@ -83,7 +83,7 @@ class App extends React.Component {
 				<div className='parent-div' id='videos'>
 					<video
 						style={{
-							filter: `grayscale(${this.state.gray_percent}%)`,
+							filter: `grayscale(${this.state.gray_percent}%) contrast(${this.state.contrast_percent}%)`,
 						}}
 						id='add-video'
 						className='add-video'
@@ -108,14 +108,28 @@ class App extends React.Component {
 					decrease_gray
 				</button>
 				{this.state.gray_percent}
-				{/* <canvas
-					id='canvas_video'
-					style={{
-						position: 'initial',
-						height: '720',
-						width: '1280',
+				<br/>
+
+				<button
+					id='increase_contrast'
+					onClick={() => {
+						let contrast_percent = this.state.contrast_percent + 5
+						this.setState({ contrast_percent })
 					}}
-				></canvas> */}
+				>
+					increase_contrast
+				</button>
+				<button
+					id='decrease_contrast'
+					onClick={() => {
+						let contrast_percent = this.state.contrast_percent - 5
+						this.setState({ contrast_percent })
+					}}
+				>
+					decrease_contrast
+				</button>
+				{this.state.contrast_percent}
+				<br/>
 				<button>Publish</button>
 			</React.Fragment>
 		)

@@ -12,6 +12,7 @@ class App extends React.Component {
 			contrast_percent: 100,
 			hue_rotate: 0,
 			saturate_percent: 100,
+			sepia:0
 		}
 		this.toggle = this.toggle.bind(this)
 		this.fireCheck = this.fireCheck.bind(this)
@@ -96,6 +97,32 @@ class App extends React.Component {
 						className='add-video'
 					></video>
 				</div>
+				filters:
+				<button
+					onClick={() => {
+						this.setState({
+							gray_percent: -10,
+							contrast_percent: 149,
+							hue_rotate: 95,
+						})
+					}}
+					id='filter'
+				>
+					filter 1
+				</button>
+				<button
+					onClick={() => {
+						this.setState({
+							sepia: 90,
+							hue_rotate: 90,
+							contrast_percent:125
+						})
+					}}
+					id='filter'
+				>
+					filter 1
+				</button>
+				<br />
 				<button
 					id='increase_gray'
 					onClick={() => {
@@ -116,7 +143,6 @@ class App extends React.Component {
 				</button>
 				{this.state.gray_percent}
 				<br />
-
 				<button
 					id='increase_contrast'
 					onClick={() => {
@@ -137,7 +163,6 @@ class App extends React.Component {
 				</button>
 				{this.state.contrast_percent}
 				<br />
-
 				<button
 					onClick={() => {
 						let hue_rotate = this.state.hue_rotate + 5
@@ -156,7 +181,6 @@ class App extends React.Component {
 				</button>
 				{this.state.hue_rotate}
 				<br />
-
 				<button
 					onClick={() => {
 						let saturate_percent = this.state.saturate_percent + 5

@@ -1,5 +1,5 @@
 {
-	
+	"homepage": "baselineApplicationWithReact",
 	"name": "react-starter",
 	"version": "0.1.0",
 	"private": true,
@@ -11,6 +11,7 @@
 		"@testing-library/react": "^9.3.2",
 		"@testing-library/user-event": "^7.1.2",
 		"airtable": "^0.8.1",
+		"axios": "^0.20.0",
 		"brfs": "^2.0.2",
 		"browserify": "^16.5.0",
 		"codemirror": "^5.52.2",

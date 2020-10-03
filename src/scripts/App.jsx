@@ -1,6 +1,9 @@
+import Axios from 'axios'
 import React from 'react'
 // import logo from '../assets/logo.svg'
 import '../styles/App.scss'
+
+const link = 'http://localhost:8080'
 
 class App extends React.Component {
 	constructor() {
@@ -12,7 +15,7 @@ class App extends React.Component {
 			contrast_percent: 100,
 			hue_rotate: 0,
 			saturate_percent: 100,
-			sepia:0
+			sepia: 0,
 		}
 		this.toggle = this.toggle.bind(this)
 		this.fireCheck = this.fireCheck.bind(this)
@@ -51,8 +54,8 @@ class App extends React.Component {
 
 	displayVideo() {
 		let recordedBlobs = window.recordedBlobs
-		this.setState({ recordedBlobs })
 		const superBuffer = new Blob(recordedBlobs, { type: 'video/webm' })
+		this.setState({ recordedBlobs, superBuffer })
 
 		let video = document.getElementById('add-video')
 		video.setAttribute('controls', 'controls')
@@ -115,7 +118,7 @@ class App extends React.Component {
 						this.setState({
 							sepia: 90,
 							hue_rotate: 90,
-							contrast_percent:125
+							contrast_percent: 125,
 						})
 					}}
 					id='filter'
@@ -199,7 +202,24 @@ class App extends React.Component {
 				</button>
 				{this.state.saturate_percent}
 				<br />
-				<button>Publish</button>
+				<button
+					onClick={async () => {
+						let data = this.state.superBuffer
+						console.log(typeof data)
+						let formData = new FormData()
+						formData.append('file',data)
+						let result = await Axios.post(
+							link,
+							formData,
+							{
+								headers:{'Content-Type': `multipart/form-data`}
+							}
+						)
+						console.log(result)
+					}}
+				>
+					Publish
+				</button>
 			</React.Fragment>
 		)
 	}

@@ -5,6 +5,8 @@ import '../styles/App.scss'
 
 const link = 'http://localhost:8080'
 
+const queryString = require('query-string');
+
 class App extends React.Component {
 	constructor() {
 		super()
@@ -20,11 +22,15 @@ class App extends React.Component {
 		this.toggle = this.toggle.bind(this)
 		this.fireCheck = this.fireCheck.bind(this)
 	}
+
 	componentDidMount() {
 		document.getElementById('root').style.display = 'none'
 		this.setState({ camera: true })
 		let processed = document.getElementById('processed')
 		processed.addEventListener('change', this.toggle)
+
+		let parsed = queryString.parse(window.location.search)
+		this.setState({user:parsed.user})
 	}
 
 	fireCheck() {
@@ -208,8 +214,9 @@ class App extends React.Component {
 						console.log(typeof data)
 						let formData = new FormData()
 						formData.append('file',data)
+						formData.append('user',this.state.user)
 						let result = await Axios.post(
-							link,
+							link+'?user='+this.state.user,
 							formData,
 							{
 								headers:{'Content-Type': `multipart/form-data`}

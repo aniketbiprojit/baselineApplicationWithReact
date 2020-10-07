@@ -1,5 +1,5 @@
 {
-	"homepage": "baselineApplicationWithReact",
+	
 	"name": "react-starter",
 	"version": "0.1.0",
 	"private": true,
@@ -27,6 +27,7 @@
 		"glsl-worley": "^1.0.2",
 		"hull.js": "^1.0.0",
 		"node-sass": "^4.14.1",
+		"querystring": "^0.2.0",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-scripts": "3.4.1",
